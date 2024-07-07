@@ -1,0 +1,24 @@
+:root {
+
+    --header-width: 50px
+
+}
+
+body{
+
+    font-family: 'Courier New', Courier, monospace;
+
+    display: grid;
+    grid-template-areas: "header header"
+                         "main main"
+                         "footer footer";
+
+    grid-template-rows:  100% 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 10px 10px;
+}
+
