@@ -74,6 +74,9 @@ export default function Footer(){
 
                     <ul>
                         <li>
+                            <Link href="/">Home</Link>
+                        </li>
+                        <li>
                             <Link href="/crudsystem">Crud system</Link>
                         </li>
                         <li>
