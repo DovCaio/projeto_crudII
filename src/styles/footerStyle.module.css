@@ -49,10 +49,8 @@
 
 
 
-.Listfooter  :hover{
-
+.link :hover{
     text-decoration: underline;
-
 }
 
 
@@ -81,6 +79,20 @@
 
 
     font-size: 0.7em;
+
+}
+
+.contactUsDivFooter{
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.contactUsDivFooter li {
+
+    margin-left: 2px;
+
 
 }
 
