@@ -1,19 +1,22 @@
 import headerStyle from "../../styles/headerStyle.module.css"
+import Link from "next/link"
 
 export default function Header (){
 
 
     return (
         <header className={headerStyle.header} >
-        <h1 className="text-4xl font-bold tracking-tight text-black sm:text-6xl">CrudII</h1>
+        <Link href="/">
+            <h1 className="text-4xl font-bold tracking-tight text-black sm:text-6xl">CrudII</h1>
 
+        </Link>
             <nav className={headerStyle.nav}>
-                <a href="#" className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+                <Link href="/crudsystem" className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
                     Crud System
-                </a>
-                <a href="#" className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+                </Link>
+                <Link href="/acknowledgements" className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
                     Acknowlegdments
-                </a>
+                </Link>
             </nav>
 </header>
     )

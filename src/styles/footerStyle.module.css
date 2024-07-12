@@ -1,6 +1,97 @@
 
 
-
 .footer{
     grid-area: footer;
+
+
+    display: flex;
+    flex-direction: column;
+
+    color: black;
+
+    margin-top: 50px;
+    
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.footerConteiner {
+
+    display: flex;
+    align-self: center;
+    
+    justify-content: space-around;
+
+    flex: 1 1;
+
+    
+
+}
+
+.divsFooter{
+    
+    margin: 25px 20px;
+    width: 200px;
+    text-align: start;
+    
+}
+
+.titleFooterElement{
+
+    font-weight: bold;
+    
+
+
+}
+
+
+
+.Listfooter  :hover{
+
+    text-decoration: underline;
+
+}
+
+
+.rights {
+
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.hr{
+
+    border: none;
+    height: 1px;
+    width: 98%;
+    align-self: center;
+    color: black;
+    background-color: black;
+
+}
+
+
+.p{
+
+
+    font-size: 0.7em;
+
+}
+
+
+@media (max-width: 816px){
+
+    .footerConteiner{
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+
 }
