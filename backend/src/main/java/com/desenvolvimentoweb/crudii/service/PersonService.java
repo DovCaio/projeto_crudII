@@ -1,12 +1,17 @@
 package com.desenvolvimentoweb.crudii.service;
 
 import com.desenvolvimentoweb.crudii.dto.person.PersonPostPutRequestDTO;
+import com.desenvolvimentoweb.crudii.dto.person.PersonResponseDTO;
+import com.desenvolvimentoweb.crudii.exception.person.PersonNotExistsException;
 import com.desenvolvimentoweb.crudii.model.Person;
 import com.desenvolvimentoweb.crudii.repository.PersonRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PersonService {
@@ -21,34 +26,52 @@ public class PersonService {
 
     }
 
-    private Person convert(PersonPostPutRequestDTO personPostPutRequestDTO){
+    private Person convertByRequestDTO(PersonPostPutRequestDTO personPostPutRequestDTO){
 
         return personMapper().map(personPostPutRequestDTO, Person.class);
     }
 
-    public Person createPerson(PersonPostPutRequestDTO personPostPutRequestDTO){
-        Person person = convert(personPostPutRequestDTO);
+    private PersonResponseDTO convertToResponseDTO(Person person){
 
-        return personRepository.save(person);
+        return personMapper().map(person, PersonResponseDTO.class);
+
+    }
+
+    public PersonResponseDTO createPerson(PersonPostPutRequestDTO personPostPutRequestDTO){
+        Person person = convertByRequestDTO(personPostPutRequestDTO);
+
+        return convertToResponseDTO(personRepository.save(person));
 
     }
 
 
-    public void updatePerson(Long id,PersonPostPutRequestDTO personPostPutRequestDTO){
-        Person person = convert(personPostPutRequestDTO);
+    public PersonResponseDTO updatePerson(Long id,PersonPostPutRequestDTO personPostPutRequestDTO){
+        if (!personRepository.existsById(id)) throw new PersonNotExistsException();
+
+        Person person = convertByRequestDTO(personPostPutRequestDTO);
         person.setId(id);
 
-        personRepository.save(person);
+        return convertToResponseDTO(personRepository.save(person));
 
     }
 
     public void deletePerson(Long id){
+        if (!personRepository.existsById(id)) throw new PersonNotExistsException();
         personRepository.deleteById(id);
     }
 
-    public Person getAPerson(Long id){
+    public PersonResponseDTO getAPerson(Long id){
+        if (!personRepository.existsById(id)) throw new PersonNotExistsException();
 
-        return personRepository.getById(id);
+        return convertToResponseDTO(personRepository.getById(id));
+
+    }
+
+    public List<PersonResponseDTO> getAllPersons(){
+
+        return personRepository.findAll().stream()
+                .map(p -> convertToResponseDTO(p))
+                .collect(Collectors.toList());
 
     }
 

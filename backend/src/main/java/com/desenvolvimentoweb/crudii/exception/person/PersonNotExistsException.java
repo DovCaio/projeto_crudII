@@ -9,7 +9,7 @@ public class PersonNotExistsException extends ApplicationException {
 
     public PersonNotExistsException(){
 
-        super("person not found!");
+        super("Person not found!");
 
     }
 
