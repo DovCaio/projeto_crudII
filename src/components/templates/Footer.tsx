@@ -71,7 +71,7 @@ export default function Footer(){
 
                         </li>
                         <li>
-                            <Link href="https://github.com" target="_blank">
+                            <Link href="https://github.com/DovCaio" target="_blank">
                                 <Image
                                     src={GitHubIco}
                                     width={icoSizes.width}
