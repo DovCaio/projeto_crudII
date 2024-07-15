@@ -2,9 +2,7 @@ package com.desenvolvimentoweb.crudii.model;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +18,7 @@ public class Address {
 
     @Id
     @JsonProperty("id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @JsonProperty("contry")
     private String contry;

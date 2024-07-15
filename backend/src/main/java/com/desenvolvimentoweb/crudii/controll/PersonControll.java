@@ -27,7 +27,6 @@ public class PersonControll {
     }
 
 
-
     @PutMapping("{id}")
     public ResponseEntity<?> put(@PathVariable("id") Long id ,
                                 @RequestBody PersonPostPutRequestDTO person) {

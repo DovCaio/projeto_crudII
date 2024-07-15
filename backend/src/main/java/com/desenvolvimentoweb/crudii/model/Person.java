@@ -17,6 +17,7 @@ public class Person {
 
     @Id
     @JsonProperty("id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @JsonProperty("firstName")
@@ -27,7 +28,7 @@ public class Person {
     private String email;
     @JsonProperty("address")
     @JoinColumn(name = "address_tb")
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
 }
