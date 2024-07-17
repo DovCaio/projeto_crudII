@@ -5,19 +5,42 @@ export default class Request {
 
     private url: string = "http://localhost:8080/persons"
 
-    public post(person: Object){
+    public async post(person: Object){
+        let result
 
-        axios.post(this.url, person)
+        await axios.post(this.url, person)
             .then(response => {
 
-                console.log(response)
+                result = response
 
             })
             .catch(err => {
 
-                console.log(err)
+                throw err
 
             })
+
+        return result
+
+    }
+
+    public async put(person: Object){
+        let result
+
+        axios.put(this.url, person)
+            .then(response => {
+
+                result = response
+
+            })
+            .catch(err => {
+
+
+                throw err
+
+            })
+
+        return result
 
     }
 

@@ -2,15 +2,16 @@
 
 import { FormEvent } from "react"
 import crudSysteStyle from "../../styles/crudSystemStyle.module.css"
-import toObject from "@/functions/toObject";
+import toPerson from "@/functions/toPerson";
 import Request from "@/functions/Request";
+import List from "../templates/List";
 
 const req = new Request();
 
 function submit(e : FormEvent<HTMLFormElement>){
     e.preventDefault()
     const form = new FormData(e.currentTarget)
-    let person = toObject(form)
+    let person = toPerson(form)
     req.post(person)
     
 }
@@ -149,11 +150,15 @@ export default function CrudSystem() {
                         />
                     </div>
                     </div>
+                    <input type="submit" value="Submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"/>
+                    <input type="reset" value="Cancel"  className="flex w-full justify-center rounded-md bg-gray-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"/>
                 </div>
                 </div>
 
-                <input type="submit" value="Submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"/>
+                
+                <List>
 
+                </List>
             </form>
 
     </main>
