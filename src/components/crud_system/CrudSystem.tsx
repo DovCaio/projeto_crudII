@@ -4,7 +4,7 @@ import { FormEvent } from "react"
 import crudSysteStyle from "../../styles/crudSystemStyle.module.css"
 import toPerson from "@/functions/toPerson";
 import Request from "@/functions/Request";
-import List from "../templates/List";
+import SearchField from "@/components/templates/SearchField"
 
 const req = new Request();
 
@@ -156,10 +156,9 @@ export default function CrudSystem() {
                 </div>
 
                 
-                <List>
-
-                </List>
             </form>
+            
+            <SearchField></SearchField>
 
     </main>
     )

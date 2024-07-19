@@ -1,7 +1,7 @@
 import { Children } from "react";
 
 
-export default function List(props: Object){
+export default function List(props){
 
     return (
 

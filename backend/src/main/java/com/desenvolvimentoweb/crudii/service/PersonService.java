@@ -2,6 +2,7 @@ package com.desenvolvimentoweb.crudii.service;
 
 import com.desenvolvimentoweb.crudii.dto.person.PersonPostPutRequestDTO;
 import com.desenvolvimentoweb.crudii.dto.person.PersonResponseDTO;
+import com.desenvolvimentoweb.crudii.enums.IdentificationType;
 import com.desenvolvimentoweb.crudii.exception.person.PersonNotExistsException;
 import com.desenvolvimentoweb.crudii.model.Person;
 import com.desenvolvimentoweb.crudii.repository.PersonRepository;
@@ -10,7 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -72,6 +76,42 @@ public class PersonService {
         return personRepository.findAll().stream()
                 .map(p -> convertToResponseDTO(p))
                 .collect(Collectors.toList());
+
+    }
+
+    public Set<Person> getByIdentification(IdentificationType queryType, String identification){
+
+        Set<Person> result = new HashSet<>();
+
+        switch (queryType){
+
+            case ID -> {
+
+                result.add(personRepository.findById(Long.parseLong(identification)));
+
+            }
+
+            case FIRSTNAME -> {
+
+                result = personRepository.findAllByFirstName(identification);
+
+            }
+
+            case LASTNAME -> {
+
+                result = personRepository.findAllByLastName(identification);
+
+            }
+
+            case CONTRY -> {
+
+                result = personRepository.findAllByAddress_Contry(identification);
+
+            }
+
+        }
+
+        return result;
 
     }
 

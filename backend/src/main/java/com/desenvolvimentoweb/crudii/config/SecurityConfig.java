@@ -31,7 +31,7 @@ public class SecurityConfig implements WebMvcConfigurer {
             .authorizeRequests(authorizeRequests ->
                     authorizeRequests
                             .requestMatchers(HttpMethod.POST, "/persons").permitAll()
-
+                            .requestMatchers(HttpMethod.GET, "/persons/**").permitAll()
                             .anyRequest().authenticated()
             )
             .httpBasic(withDefaults())

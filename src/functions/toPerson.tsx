@@ -1,11 +1,11 @@
 import Person from "@/model/Person"
 
 
-export default function toPerson(form: FormData): Object{
+export default function toPerson(form: FormData): Person{
 
-    
+
     let result : Person = {
-
+        id: undefined,
         firstName: "",
         lastName: "",
         email: "",
