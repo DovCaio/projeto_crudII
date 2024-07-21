@@ -8,35 +8,24 @@ export default class Request {
 
 
     public async post(person: Person){
-        let result
-
-        axios.post(this.url, person)
-            .then(response => {
-
-                result = response
-
-        })
+        
+        return await axios.post(this.url, person).then()
             
 
-        return result
+    }
+
+    public async put(person: any) {
+        
+        return await axios.put(this.url, person)
 
     }
 
-    public async get(request: string,   id: BigInt | undefined = undefined){
+    public async delete(id: number){
 
+        axios.delete(this.url + `/${id}`)
 
-
-        let result
-        await axios[request as keyof Object](this.url + (id ? `/${id}` : ""))
-            .then((response: Response) => {
-
-                result = response
-
-        })
-
-
-        return result
     }
+
 
     public async getBy(queryType:string, identification: string ) {
 

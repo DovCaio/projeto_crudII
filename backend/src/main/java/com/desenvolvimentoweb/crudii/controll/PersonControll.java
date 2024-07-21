@@ -54,7 +54,7 @@ public class PersonControll {
 
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 
         return ResponseEntity

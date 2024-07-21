@@ -6,16 +6,16 @@ import ListElement from "./ListElement"
 
 
 
-export default function List({persons}){
+export default function ListTable({persons}){
 
 
     return (
 
-        <table className={listStyle.list}>
+        <table className={listStyle.list} >
 
             <thead>
 
-                <tr>
+                <tr key="headOfTable">
 
                     <th>
                         Id
@@ -48,6 +48,10 @@ export default function List({persons}){
 
                     <th>
                         Posta Code
+                    </th>
+
+                    <th>
+                        Edit
                     </th>
                 </tr>
 

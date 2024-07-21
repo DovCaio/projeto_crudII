@@ -1,7 +1,7 @@
 "use clint"
 import SearchField from "./SearchField"
 import localePersonFieldStyle from "@/styles/localePersonFieldStyle.module.css"
-import List from "@/components/templates/List"
+import ListTable from "@/components/templates/ListTable"
 import React from "react"
 import Person from "@/model/Person"
 
@@ -15,7 +15,7 @@ export default function LocalePersonField(){
         email: "",
         address: {
 
-            contry: "",
+            country: "",
             streetAddress: "",
             city: "",
             state: "",
@@ -35,7 +35,7 @@ export default function LocalePersonField(){
 
             <SearchField changePersons={setPersons}/>
 
-            <List persons={persons}/>
+            <ListTable persons={persons}/>
 
             
 
