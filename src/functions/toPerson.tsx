@@ -11,7 +11,7 @@ export default function toPerson(form: FormData): Person{
         email: "",
         address: {
 
-            contry: "",
+            country: "",
             streetAddress: "",
             city: "",
             state: "",

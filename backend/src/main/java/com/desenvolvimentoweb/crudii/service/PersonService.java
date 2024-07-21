@@ -105,7 +105,7 @@ public class PersonService {
 
             case COUNTRY -> {
 
-                result = personRepository.findAllByAddress_Contry(identification);
+                result = personRepository.findAllByAddress_Country(identification);
 
             }
 

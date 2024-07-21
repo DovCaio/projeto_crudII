@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PersonPostPutRequestDTO {
 
-    @JsonProperty("firtName")
+    @JsonProperty("firstName")
     private String firstName;
     @JsonProperty("lastName")
     private String lastName;

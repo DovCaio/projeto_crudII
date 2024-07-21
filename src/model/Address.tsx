@@ -1,7 +1,7 @@
 
 export default interface Address {
 
-    contry: string;
+    country: string;
     city: string;
     streetAddress: string;
     state: string;

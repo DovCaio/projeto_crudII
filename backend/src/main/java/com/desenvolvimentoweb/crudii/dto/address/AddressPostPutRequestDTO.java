@@ -13,12 +13,14 @@ import lombok.NoArgsConstructor;
 @Builder
 public class AddressPostPutRequestDTO {
 
+    @JsonProperty("country")
+    private String country;
     @JsonProperty("streetAddress")
     private String streetAddress;
     @JsonProperty("city")
     private String city;
     @JsonProperty("state")
     private String state;
-    @JsonProperty("zipCode")
-    private String zipCode;
+    @JsonProperty("postalCode")
+    private String postalCode;
 }

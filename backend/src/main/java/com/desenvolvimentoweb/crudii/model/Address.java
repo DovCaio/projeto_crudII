@@ -18,17 +18,23 @@ public class Address {
 
     @Id
     @JsonProperty("id")
+    @Column(nullable = false, unique = true, name = "pk_id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    @JsonProperty("contry")
-    private String contry;
+    @JsonProperty("country")
+    @Column(nullable = false, name = "desc_country")
+    private String country;
     @JsonProperty("streetAddress")
+    @Column(nullable = false, name = "desc_street_address")
     private String streetAddress;
     @JsonProperty("city")
+    @Column(nullable = false, name = "desc_city")
     private String city;
     @JsonProperty("state")
+    @Column(nullable = false,  name = "desc_state")
     private String state;
     @JsonProperty("postalCode")
+    @Column(nullable = false,  name = "desc_postal_code")
     private String postalCode;
 
 }
