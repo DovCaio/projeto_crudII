@@ -1,28 +1,16 @@
-"use client";
-
-import { FormEvent } from "react"
+"use client"
 import crudSysteStyle from "../../styles/crudSystemStyle.module.css"
-import toPerson from "@/functions/toPerson";
-import Request from "@/functions/Request";
-import SearchField from "@/components/templates/SearchField"
+import LocalePersonField from "../templates/LocalePersonField";
+import submit from "@/functions/SubmitFormPost";
 
-const req = new Request();
-
-function submit(e : FormEvent<HTMLFormElement>){
-    e.preventDefault()
-    const form = new FormData(e.currentTarget)
-    let person = toPerson(form)
-    req.post(person)
-    
-}
 
 export default function CrudSystem() {
 
-
+    
     return( 
         <main>
             
-            <form className={crudSysteStyle.form} action={"#"} onSubmit={e => submit(e)}>
+            <form className={crudSysteStyle.form} onSubmit={e => submit(e)}>
                     <div className="border-b border-gray-900/10 pb-12">
                 <h2 className="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
                 <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
@@ -157,8 +145,8 @@ export default function CrudSystem() {
 
                 
             </form>
-            
-            <SearchField></SearchField>
+
+            <LocalePersonField/>
 
     </main>
     )

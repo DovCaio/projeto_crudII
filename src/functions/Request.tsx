@@ -40,17 +40,10 @@ export default class Request {
 
     public async getBy(queryType:string, identification: string ) {
 
-        let result;
-        await axios.get(this.url + "/" + queryType.toUpperCase() + "/" + identification)
-            .then(response => {
+        
+        return await axios.get(this.url + "/" + queryType + "/" + identification)
+            .then()
 
-                result = response.data
-
-            })
-
-        console.log(result)
-
-        return result
     }
 
     

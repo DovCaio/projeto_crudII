@@ -5,6 +5,6 @@ public enum IdentificationType {
     ID,
     FIRSTNAME,
     LASTNAME,
-    CONTRY
+    COUNTRY
 
 }

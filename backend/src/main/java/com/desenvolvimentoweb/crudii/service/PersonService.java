@@ -103,7 +103,7 @@ public class PersonService {
 
             }
 
-            case CONTRY -> {
+            case COUNTRY -> {
 
                 result = personRepository.findAllByAddress_Contry(identification);
 

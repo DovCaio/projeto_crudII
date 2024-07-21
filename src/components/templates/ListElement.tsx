@@ -1,7 +1,7 @@
 import Person from "@/model/Person"
 
-export default function ListElement(person: Person){
-    const id: string = person.id ? person.id.toString() :  "Id undefined" 
+export default function ListElement({person} : any){
+    const id: string = person.id ? person.id.toString() :  " " 
 
     return (
         

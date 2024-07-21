@@ -12,7 +12,7 @@ export default function extractIdentification(form: FormData): RequestGet{
 
     const search = Object.fromEntries(form.entries())
 
-    result.currency = search.currency.toString()
+    result.currency =  search.currency.valueOf().toString()
     result.querySearch = search.searchInput.toString() 
     
 

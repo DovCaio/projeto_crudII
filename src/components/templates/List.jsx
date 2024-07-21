@@ -1,11 +1,18 @@
-import { Children } from "react";
+"use client"
 
 
-export default function List(props){
+import listStyle from "@/styles/listStyle.module.css"
+
+
+
+export default function List({persons}){
+    
+    
+    console.log(persons)
 
     return (
 
-        <table>
+        <table className={listStyle.list}>
 
             <thead>
 
@@ -49,7 +56,9 @@ export default function List(props){
 
             <tbody>
 
-                {props.children}
+                {
+                    
+                }
 
             </tbody>
 
