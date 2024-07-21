@@ -6,12 +6,12 @@ import RequestGet from "@/model/RequestGet"
 
 const req = new Request
 
-export default function submit(e : FormEvent<HTMLFormElement>, changeProps:Function){
+export default async function submit(e : FormEvent<HTMLFormElement>, changeProps:Function){
     
     e.preventDefault()
     const form = new FormData(e.currentTarget)
     const valuesQuery: RequestGet = extractIdentification(form)
-    changeProps(req.getBy(valuesQuery.currency, valuesQuery.querySearch))
+    changeProps(await req.getBy(valuesQuery.currency, valuesQuery.querySearch))
 
    
 }

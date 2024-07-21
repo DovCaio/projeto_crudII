@@ -2,13 +2,14 @@
 
 
 import listStyle from "@/styles/listStyle.module.css"
+import ListElement from "./ListElement"
 
 
 
 export default function List({persons}){
     
     
-    console.log(persons)
+    console.log(persons.data)
 
     return (
 
@@ -57,7 +58,7 @@ export default function List({persons}){
             <tbody>
 
                 {
-                    
+                    persons.data.map(data => <ListElement person={data}/>)
                 }
 
             </tbody>
