@@ -61,6 +61,7 @@
     background-color: #a2d5c6;
     /*transform: translateY(-1rem);*/
     transform: scale(1.1, 1.1);
+    transition-duration: 250ms;
 }
 
 .explicationElement :hover {
