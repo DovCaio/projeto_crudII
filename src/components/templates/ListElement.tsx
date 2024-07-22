@@ -2,6 +2,7 @@ import Person from "@/model/Person"
 import PenIco from "@/app/icons/PenIco"
 import TrashIco from "@/app/icons/TrashIco"
 import deletePerson from "@/functions/DeletePerson"
+import updatePerson from "@/functions/updatePerson"
 
 
 
@@ -24,7 +25,7 @@ export default function ListElement({person} : any){
             <td >{person.address.postalCode}</td>
 
             <td className="flex flex-row justify-between">
-                <button type="button" className="text-green-500 hover:bg-gray-300" onClick={() => update(person)}>
+                <button type="button" className="text-green-500 hover:bg-gray-300" onClick={() => updatePerson(person)}>
                     <PenIco></PenIco>
                 </button>
 

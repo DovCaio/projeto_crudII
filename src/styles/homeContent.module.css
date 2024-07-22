@@ -27,3 +27,76 @@
     font-weight: bold;
 
 }
+
+
+.explicatonDiv {
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.explicationElements {
+
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0;
+    
+}
+
+.explicationElement {
+        
+    align-items: center;
+    padding : 20px 20px;
+    margin: 4px 4px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width: 25%;
+
+}
+
+.explicationElements :hover {
+
+    background-color: #a2d5c6;
+    /*transform: translateY(-1rem);*/
+    transform: scale(1.1, 1.1);
+}
+
+.explicationElement :hover {
+
+    transform: none;
+
+}
+
+
+@media (max-width: 567px){
+
+    .explicationElements {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .explicationElement {
+
+        width: 100%;
+
+    }
+
+}
+
+@media (min-width: 567px) and (max-width: 905px){
+
+    .explicationElements {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+
+    .explicationElement {
+        
+        
+        width: 97%;
+
+    }
+}
