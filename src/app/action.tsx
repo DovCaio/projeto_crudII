@@ -1,6 +1,6 @@
 "use server"
 
-import ListElement from "@/components/templates/ListElement"
+import ListElement from "@/components/templates/ListTableElement"
 import Person from "@/model/Person"
 import { revalidateTag } from "next/cache"
 

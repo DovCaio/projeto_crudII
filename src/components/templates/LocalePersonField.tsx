@@ -35,7 +35,7 @@ export default function LocalePersonField(){
 
             <SearchField changePersons={setPersons}/>
 
-            <ListTable persons={persons}/>
+            <ListTable persons={persons} setPersons={setPersons}/>
 
             
 

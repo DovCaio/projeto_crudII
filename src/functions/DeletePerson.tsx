@@ -5,4 +5,5 @@ export default function deletePerson(id:number){
 
     req.delete(id)
 
+
 }

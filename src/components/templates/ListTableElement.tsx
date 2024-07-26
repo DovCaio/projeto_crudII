@@ -6,7 +6,7 @@ import updatePerson from "@/functions/updatePerson"
 
 
 
-export default function ListElement({person} : any){
+export default function ListTableElement({person, persons, setPersons} : any ){
     const id: string = person.id ? person.id.toString() :  " " 
 
     return (
@@ -29,7 +29,12 @@ export default function ListElement({person} : any){
                     <PenIco></PenIco>
                 </button>
 
-                <button type="button" className="text-red-300 hover:bg-gray-300" onClick={() => deletePerson(person.id)}>
+                <button type="button" className="text-red-300 hover:bg-gray-300" onClick={() => {
+                    deletePerson(person.id)
+                    const index = persons.data.indexOf(person)
+                    setPersons(persons.data.splice(index, 1))
+
+                }}>
                     <TrashIco></TrashIco>
                 </button>
             </td>

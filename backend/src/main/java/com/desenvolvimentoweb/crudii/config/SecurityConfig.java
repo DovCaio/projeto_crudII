@@ -23,6 +23,8 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 public class SecurityConfig implements WebMvcConfigurer {
 
+    private final String url = "http://localhost:3000/";
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -32,6 +34,7 @@ public class SecurityConfig implements WebMvcConfigurer {
                     authorizeRequests
                             .requestMatchers(HttpMethod.POST, "/persons").permitAll()
                             .requestMatchers(HttpMethod.GET, "/persons/**").permitAll()
+                            .requestMatchers(HttpMethod.DELETE, "/persons/**").permitAll()
                             .anyRequest().authenticated()
             )
             .httpBasic(withDefaults())
@@ -57,7 +60,13 @@ public class SecurityConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**");
+        registry.addMapping("/**")
+                .allowedHeaders("*")
+                .allowedOrigins(url)
+                .allowedMethods("GET", "POST", "PUT", "DELETE");
     }
+
+
+
 
 }

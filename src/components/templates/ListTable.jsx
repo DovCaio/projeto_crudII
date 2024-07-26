@@ -2,11 +2,11 @@
 
 
 import listStyle from "@/styles/listStyle.module.css"
-import ListElement from "./ListElement"
+import ListTableElement from "./ListTableElement"
 
 
 
-export default function ListTable({persons}){
+export default function ListTable({persons, setPersons}){
 
 
     return (
@@ -47,7 +47,7 @@ export default function ListTable({persons}){
                     </th>
 
                     <th>
-                        Posta Code
+                        Postal Code
                     </th>
 
                     <th>
@@ -60,7 +60,7 @@ export default function ListTable({persons}){
             <tbody>
 
                 {
-                    persons.data ? persons.data.map(data => <ListElement person={data} />) : ""
+                    persons.data ? persons.data.map(data => <ListTableElement person={data} setPersons={setPersons} persons={persons}/>) : ""
                 }
 
             </tbody>

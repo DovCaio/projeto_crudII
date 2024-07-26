@@ -21,7 +21,7 @@ export default class Request {
     }
 
     public async delete(id: number){
-
+        
         axios.delete(this.url + `/${id}`)
 
     }

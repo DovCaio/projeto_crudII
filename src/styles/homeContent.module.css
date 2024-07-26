@@ -46,6 +46,7 @@
 }
 
 .explicationElement {
+    background-color: white;
         
     align-items: center;
     padding : 20px 20px;
@@ -62,6 +63,7 @@
     /*transform: translateY(-1rem);*/
     transform: scale(1.1, 1.1);
     transition-duration: 250ms;
+    
 }
 
 .explicationElement :hover {
