@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long>  {
-
+    public boolean existsById(Long id);
     public Person findById(long id);
     public Set<Person> findAllByFirstName(String firstName);
     public Set<Person> findAllByLastName(String lastName);

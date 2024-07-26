@@ -2,15 +2,54 @@
 import crudSysteStyle from "../../styles/crudSystemStyle.module.css"
 import LocalePersonField from "../templates/LocalePersonField";
 import submit from "@/functions/SubmitFormPost";
+import React from "react";
 
+
+function newOnchange(e: React.FormEvent<HTMLInputElement>, set : Function) {
+
+    e.preventDefault()
+    set(e.currentTarget.value)
+    
+
+}
+
+function resetAll(setFirstName:Function, setLastName:Function, setEmail:Function, setCountry:Function, setStreetAddress:Function, setCity:Function,
+    setState:Function, setPostalCode:Function, setId: Function
+){
+    setId("")
+    setFirstName("")
+    setLastName("")
+    setEmail("")
+    setCountry("")
+    setCity("")
+    setStreetAddress("")
+    setState("")
+    setPostalCode("")
+
+
+}
 
 export default function CrudSystem() {
+    const [id, setId] = React.useState("")
+    const [firstName, setFirstName] = React.useState("") 
+    const [lastName, setLastName] = React.useState("") 
+    const [email, setEmail] = React.useState("") 
+    const [country, setCountry] = React.useState("") 
+    const [streetAddress, setStreetAddress] = React.useState("") 
+    const [city, setCity] = React.useState("") 
+    const [state, setState] = React.useState("") 
+    const [postalCode, setPostalCode] = React.useState("") 
 
-    
+
     return( 
         <main>
             
-            <form className={crudSysteStyle.form} onSubmit={e => submit(e)}>
+            <form className={crudSysteStyle.form} onSubmit={e => {
+                submit(e, id) 
+                resetAll(setFirstName, setLastName, setEmail, setCountry, setStreetAddress,
+                    setCity,setState, setPostalCode, setId
+                )
+                }}>
                     <div className="border-b border-gray-900/10 pb-12">
                 <h2 className="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
                 <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
@@ -26,6 +65,8 @@ export default function CrudSystem() {
                         name="firstName"
                         type="text"
                         autoComplete="given-name"
+                        value={firstName}
+                        onChange={e => newOnchange(e, setFirstName)}
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                     </div>
@@ -41,6 +82,8 @@ export default function CrudSystem() {
                         name="lastName"
                         type="text"
                         autoComplete="family-name"
+                        value={lastName}
+                        onChange={e => newOnchange(e, setLastName)}
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                     </div>
@@ -56,6 +99,8 @@ export default function CrudSystem() {
                         name="email"
                         type="email"
                         autoComplete="email"
+                        value={email}
+                        onChange={e => newOnchange(e, setEmail)}
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                     </div>
@@ -70,6 +115,8 @@ export default function CrudSystem() {
                         id="country"
                         name="country"
                         autoComplete="country-name"
+                        value={country}
+                        onChange={e => newOnchange(e, setCountry)}
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                         >
                         <option>United States</option>
@@ -89,6 +136,8 @@ export default function CrudSystem() {
                         name="streetAddress"
                         type="text"
                         autoComplete="street-address"
+                        value={streetAddress}
+                        onChange={e => newOnchange(e, setStreetAddress)}
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                     </div>
@@ -104,6 +153,8 @@ export default function CrudSystem() {
                         name="city"
                         type="text"
                         autoComplete="address-level2"
+                        value={city}
+                        onChange={e => newOnchange(e, setCity)}
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                     </div>
@@ -119,6 +170,8 @@ export default function CrudSystem() {
                         name="state"
                         type="text"
                         autoComplete="address-level1"
+                        value={state}
+                        onChange={e => newOnchange(e, setState)}
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                     </div>
@@ -134,6 +187,8 @@ export default function CrudSystem() {
                         name="postaCode"
                         type="text"
                         autoComplete="postal-code"
+                        value={postalCode}
+                        onChange={e => newOnchange(e, setPostalCode)}
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                     </div>
@@ -146,7 +201,15 @@ export default function CrudSystem() {
                 
             </form>
 
-            <LocalePersonField/>
+            <LocalePersonField
+                setId={setId}
+                setFirstName={setFirstName}  setLastName={setLastName}
+                 setEmail={setEmail}  setCountry={setCountry}
+                 setStreetAddress={setStreetAddress}
+                 setCity={setCity}  setState={setState}
+                 setPostalCode={setPostalCode}
+
+            />
 
     </main>
     )

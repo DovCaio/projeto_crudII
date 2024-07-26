@@ -5,7 +5,10 @@ import ListTable from "@/components/templates/ListTable"
 import React from "react"
 import Person from "@/model/Person"
 
-export default function LocalePersonField(){
+
+export default function LocalePersonField({setId, setFirstName, setLastName, 
+    setEmail,  setCountry, setStreetAddress, setCity,
+     setState, setPostalCode} : any){
 
     const personArray:[Person] = [
         {
@@ -26,7 +29,9 @@ export default function LocalePersonField(){
     }
     ]
     
-    const [persons, setPersons] = React.useState([])
+    const [persons, setPersons] = React.useState([])        
+    
+
 
 
     return (
@@ -35,7 +40,14 @@ export default function LocalePersonField(){
 
             <SearchField changePersons={setPersons}/>
 
-            <ListTable persons={persons} setPersons={setPersons}/>
+            <ListTable persons={persons} setPersons={setPersons}
+                setId={setId}
+                setFirstName={setFirstName}  setLastName={setLastName}
+                setEmail={setEmail}  setCountry={setCountry}
+                setStreetAddress={setStreetAddress}
+                setCity={setCity}  setState={setState}
+                setPostalCode={setPostalCode}
+            />
 
             
 

@@ -10,13 +10,12 @@ export default class Request {
     public async post(person: Person){
         
         return await axios.post(this.url, person).then()
-            
 
     }
 
-    public async put(person: any) {
-        
-        return await axios.put(this.url, person)
+    public async put(person: Person, id: string) { 
+        console.log(this.url + `/${id}`, person)
+        return await axios.put(this.url + `/${id}`, person).then()
 
     }
 

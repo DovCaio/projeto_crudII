@@ -2,11 +2,29 @@ import Person from "@/model/Person"
 import PenIco from "@/app/icons/PenIco"
 import TrashIco from "@/app/icons/TrashIco"
 import deletePerson from "@/functions/DeletePerson"
-import updatePerson from "@/functions/updatePerson"
+
+
+function changeInputsValues(setId:any, setFirstName:any, setLastName:any, setEmail:any, setCountry:any, 
+    setStreetAddress:any, setCity:any, setState:any, setPostalCode:any, person: any
+){
+
+    setId(person.id)
+    setFirstName(person.firstName)
+    setLastName(person.lastName)
+    setEmail(person.email)
+    setCountry(person.address.country)
+    setStreetAddress(person.address.streetAddress)
+    setCity(person.address.city)
+    setState(person.address.state)
+    setPostalCode(person.address.postalCode)
+
+}
 
 
 
-export default function ListTableElement({person, persons, setPersons} : any ){
+export default function ListTableElement({person, persons, setPersons, setId, setFirstName, setLastName, 
+    setEmail,  setCountry, setStreetAddress, setCity,
+     setState, setPostalCode} : any ){
     const id: string = person.id ? person.id.toString() :  " " 
 
     return (
@@ -25,7 +43,13 @@ export default function ListTableElement({person, persons, setPersons} : any ){
             <td >{person.address.postalCode}</td>
 
             <td className="flex flex-row justify-between">
-                <button type="button" className="text-green-500 hover:bg-gray-300" onClick={() => updatePerson(person)}>
+                <button type="button" className="text-green-500 hover:bg-gray-300" onClick={() => {
+                    
+                    changeInputsValues(setId, setFirstName, setLastName, setEmail, setCountry, setStreetAddress,
+                        setCity, setState, setPostalCode, person
+                    )
+                   
+                    }}>
                     <PenIco></PenIco>
                 </button>
 

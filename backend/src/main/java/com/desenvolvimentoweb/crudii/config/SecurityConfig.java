@@ -35,6 +35,8 @@ public class SecurityConfig implements WebMvcConfigurer {
                             .requestMatchers(HttpMethod.POST, "/persons").permitAll()
                             .requestMatchers(HttpMethod.GET, "/persons/**").permitAll()
                             .requestMatchers(HttpMethod.DELETE, "/persons/**").permitAll()
+                            .requestMatchers(HttpMethod.PUT, "/persons/**").permitAll()
+
                             .anyRequest().authenticated()
             )
             .httpBasic(withDefaults())

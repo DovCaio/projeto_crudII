@@ -6,9 +6,11 @@ import ListTableElement from "./ListTableElement"
 
 
 
-export default function ListTable({persons, setPersons}){
+export default function ListTable({persons, setPersons, setId, setFirstName, setLastName, 
+    setEmail,  setCountry, setStreetAddress, setCity,
+     setState, setPostalCode}){
 
-
+    
     return (
 
         <table className={listStyle.list} >
@@ -60,7 +62,15 @@ export default function ListTable({persons, setPersons}){
             <tbody>
 
                 {
-                    persons.data ? persons.data.map(data => <ListTableElement person={data} setPersons={setPersons} persons={persons}/>) : ""
+                    persons.data ? persons.data.map(data => 
+                    <ListTableElement person={data} setPersons={setPersons} persons={persons}
+                        setId={setId}
+                        setFirstName={setFirstName}  setLastName={setLastName}
+                        setEmail={setEmail}  setCountry={setCountry}
+                        setStreetAddress={setStreetAddress}
+                        setCity={setCity}  setState={setState}
+                        setPostalCode={setPostalCode}
+                    />) : ""
                 }
 
             </tbody>

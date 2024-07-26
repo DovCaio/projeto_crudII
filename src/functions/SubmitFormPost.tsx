@@ -5,11 +5,11 @@ import Request from "./Request"
 
 const req = new Request()
 
-export default function submit(e : FormEvent<HTMLFormElement>){
+export default function submit(e : FormEvent<HTMLFormElement>, id: string){
     e.preventDefault()
     const form = new FormData(e.currentTarget)
     let person = toPerson(form)
-    req.post(person)
-    e.currentTarget.reset()
+    id ? req.put(person, id) : req.post(person)
+    //e.currentTarget.reset() now this are in the component CrudSystem
     
 }
