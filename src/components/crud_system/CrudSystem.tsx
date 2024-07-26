@@ -13,21 +13,6 @@ function newOnchange(e: React.FormEvent<HTMLInputElement>, set : Function) {
 
 }
 
-function resetAll(setFirstName:Function, setLastName:Function, setEmail:Function, setCountry:Function, setStreetAddress:Function, setCity:Function,
-    setState:Function, setPostalCode:Function, setId: Function
-){
-    setId("")
-    setFirstName("")
-    setLastName("")
-    setEmail("")
-    setCountry("")
-    setCity("")
-    setStreetAddress("")
-    setState("")
-    setPostalCode("")
-
-
-}
 
 export default function CrudSystem() {
     const [id, setId] = React.useState("")
@@ -40,20 +25,31 @@ export default function CrudSystem() {
     const [state, setState] = React.useState("") 
     const [postalCode, setPostalCode] = React.useState("") 
 
+    function resetAll(
+    ){
+        setId("")
+        setFirstName("")
+        setLastName("")
+        setEmail("")
+        setCountry("")
+        setCity("")
+        setStreetAddress("")
+        setState("")
+        setPostalCode("")
+    
+    
+    }
+    
 
     return( 
         <main>
             
             <form className={crudSysteStyle.form} onSubmit={e => {
                 submit(e, id) 
-                resetAll(setFirstName, setLastName, setEmail, setCountry, setStreetAddress,
-                    setCity,setState, setPostalCode, setId
-                )
+                resetAll()
                 }} onReset={e => {
 
-                    resetAll(setFirstName, setLastName, setEmail, setCountry, setStreetAddress,
-                        setCity,setState, setPostalCode, setId
-                    )
+                    resetAll()
 
                 }}>
                     <div className="border-b border-gray-900/10 pb-12">
