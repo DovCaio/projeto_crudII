@@ -8,7 +8,7 @@ import Person from "@/model/Person"
 
 export default function LocalePersonField({setId, setFirstName, setLastName, 
     setEmail,  setCountry, setStreetAddress, setCity,
-     setState, setPostalCode} : any){
+     setState, setPostalCode, setResponseBox} : any){
 
     const personArray:[Person] = [
         {
@@ -47,6 +47,7 @@ export default function LocalePersonField({setId, setFirstName, setLastName,
                 setStreetAddress={setStreetAddress}
                 setCity={setCity}  setState={setState}
                 setPostalCode={setPostalCode}
+                setResponseBox={setResponseBox}
             />
 
             

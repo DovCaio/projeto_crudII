@@ -48,14 +48,14 @@ export default function CrudSystem() {
     
     }
 
-    const [requestBox, setRequestBox ] = React.useState()
+    const [responseBox, setResponseBox ] = React.useState()
     
 
     return( 
         <main>
             
             <form className={crudSysteStyle.form} onSubmit={e => {
-                submit(e, id, setRequestBox) 
+                submit(e, id, setResponseBox) 
                 resetAll()
                 }} onReset={e => {
 
@@ -213,7 +213,7 @@ export default function CrudSystem() {
                 </div>
 
                 {
-                    requestBox
+                    responseBox
                 }
             </form>
 
@@ -224,6 +224,7 @@ export default function CrudSystem() {
                  setStreetAddress={setStreetAddress}
                  setCity={setCity}  setState={setState}
                  setPostalCode={setPostalCode}
+                 setResponseBox={setResponseBox}
 
             />
 

@@ -35,14 +35,16 @@ export default class Request {
     }
 
     public async put(person: Person, id: string) { 
-        console.log(this.url + `/${id}`, person)
+
         return await axios.put(this.url + `/${id}`, person).then()
 
     }
 
-    public async delete(id: number){
+    public async delete(id: number, setResponseBox: Function){
         
         axios.delete(this.url + `/${id}`)
+            .then(response => this.sucess(setResponseBox, response))
+            .catch(err => this.fail(setResponseBox, err))
 
     }
 
