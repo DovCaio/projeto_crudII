@@ -1,0 +1,39 @@
+
+
+.responseBox {
+
+
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 2px black solid;
+    
+}
+
+.responseBox button{
+
+    
+    align-self: flex-end;
+    margin: 6px;
+
+
+}
+
+.responseBox h3 {
+    align-self: center;
+    padding: 10px;
+    font-weight: bold;
+
+}
+
+.responseBox p {
+
+    align-self: center;
+
+}

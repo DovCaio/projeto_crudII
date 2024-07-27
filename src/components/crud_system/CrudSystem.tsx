@@ -3,6 +3,7 @@ import crudSysteStyle from "../../styles/crudSystemStyle.module.css"
 import LocalePersonField from "../templates/LocalePersonField";
 import submit from "@/functions/SubmitFormPost";
 import React from "react";
+import ResponseBox from "../templates/ResponseBox";
 
 
 function newOnchange(e: React.FormEvent<HTMLInputElement>, set : Function) {
@@ -46,19 +47,23 @@ export default function CrudSystem() {
     
     
     }
+
+    const [requestBox, setRequestBox ] = React.useState()
     
 
     return( 
         <main>
             
             <form className={crudSysteStyle.form} onSubmit={e => {
-                submit(e, id) 
+                submit(e, id, setRequestBox) 
                 resetAll()
                 }} onReset={e => {
 
                     resetAll()
 
-                }}>
+                }}
+                id="form"
+                >
                     <div className="border-b border-gray-900/10 pb-12">
                 <h2 className="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
                 <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
@@ -207,7 +212,9 @@ export default function CrudSystem() {
                 </div>
                 </div>
 
-                
+                {
+                    requestBox
+                }
             </form>
 
             <LocalePersonField

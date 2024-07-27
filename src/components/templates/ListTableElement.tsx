@@ -48,8 +48,12 @@ export default function ListTableElement({person, persons, setPersons, setId, se
                     changeInputsValues(setId, setFirstName, setLastName, setEmail, setCountry, setStreetAddress,
                         setCity, setState, setPostalCode, person
                     )
-                   
-                    }}>
+                    
+                    scrollTo(0,0)
+                    
+                    }
+                    
+                    }>
                     <PenIco></PenIco>
                 </button>
 
