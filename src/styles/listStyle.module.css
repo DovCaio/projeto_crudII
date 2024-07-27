@@ -2,9 +2,38 @@
 
 .list thead tr th {
     
-    padding: 0px 10px;
+ 
+}
+
+
+.list {
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+    margin-top: 30px;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: rgb(100,9,121);
+    background: linear-gradient(90deg, rgba(100,9,121,1) 35%, rgba(0,3,255,1) 100%); 
 
 }
+
+.list thead {
+
+    padding: 1px;
+    color: white;
+
+}
+
+.list thead tr{
+    
+    
+    height: 50px;
+    
+
+}
+
 
 .list tbody td{
 
@@ -14,8 +43,28 @@
 
 }
 
-.list {
+.list tbody td button {
 
-    width: 100%;
+    margin-top: 100%;
+    margin-bottom: 100%;
+    
+
+}
+
+.list tbody tr:nth-child(even) {
+
+    background-color: #f0f8ff;
+    
+}
+
+.list tbody tr:nth-child(odd) {
+
+    background-color: #f0ecec;
+    
+}
+
+.list tbody tr:hover{
+    color: #fff;
+    background-color: rgb(138, 68, 209);
 
 }
