@@ -34,9 +34,12 @@ export default class Request {
 
     }
 
-    public async put(person: Person, id: string) { 
+    public async put(person: Person, id: string, setRequestBox: Function) { 
 
-        return await axios.put(this.url + `/${id}`, person).then()
+        return await axios.put(this.url + `/${id}`, person)
+            .then((response) => this.sucess(setRequestBox, response))
+            .catch((err) => this.fail(setRequestBox, err))
+        
 
     }
 
