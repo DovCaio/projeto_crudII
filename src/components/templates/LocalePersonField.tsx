@@ -38,7 +38,7 @@ export default function LocalePersonField({setId, setFirstName, setLastName,
 
         <div className={localePersonFieldStyle.localePersonField}>
 
-            <SearchField changePersons={setPersons}/>
+            <SearchField changePersons={setPersons} setResponseBox={setResponseBox}/>
 
             <ListTable persons={persons} setPersons={setPersons}
                 setId={setId}

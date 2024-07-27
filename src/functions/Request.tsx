@@ -52,11 +52,12 @@ export default class Request {
     }
 
 
-    public async getBy(queryType:string, identification: string ) {
+    public async getBy(queryType:string, identification: string, setResponseBox: Function ) {
 
         
         return await axios.get(this.url + "/" + queryType + "/" + identification)
-            .then()
+            
+            .catch(err => this.fail(setResponseBox, err))
 
     }
 

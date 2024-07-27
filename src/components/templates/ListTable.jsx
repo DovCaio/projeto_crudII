@@ -11,6 +11,8 @@ export default function ListTable({persons, setPersons, setId, setFirstName, set
      setState, setPostalCode, setResponseBox}){
 
     
+        
+
     return (
 
         <table className={listStyle.list} >
@@ -62,7 +64,8 @@ export default function ListTable({persons, setPersons, setId, setFirstName, set
             <tbody>
 
                 {
-                    persons.data ? persons.data.map(data => 
+
+                    persons && persons.data && persons.data[0] ? persons.data.map(data => 
                     <ListTableElement person={data} setPersons={setPersons} persons={persons}
                         setId={setId}
                         setFirstName={setFirstName}  setLastName={setLastName}
