@@ -115,4 +115,10 @@ public class PersonService {
 
     }
 
+    public Long getTotalPerson(){
+
+        return personRepository.count();
+
+    }
+
 }

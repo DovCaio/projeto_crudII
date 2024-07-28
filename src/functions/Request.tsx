@@ -56,12 +56,39 @@ export default class Request {
 
         
         return await axios.get(this.url + "/" + queryType + "/" + identification)
-            
+            .then(response => {
+
+                if (!response.data[0]){
+                    this.fail(setResponseBox, {message: "Not Found"})
+                }
+                return response
+
+            })
             .catch(err => this.fail(setResponseBox, err))
 
     }
 
-    
+    public async getCount(){
+
+        return await axios.get(this.url + "/totalPersons" ).then( response => {
+
+            return response.data
+
+        })
+
+    }
+
+    public async getAll(){
+
+
+        return await axios.get(this.url)
+                    .then(response => {
+
+                        return response.data
+
+                    })
+
+    }
 
 
 

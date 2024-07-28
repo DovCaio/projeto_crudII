@@ -14,8 +14,8 @@ export default function Header (){
                 <Link href="/crudsystem" className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
                     Crud System
                 </Link>
-                <Link href="/acknowledgements" className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                    Acknowlegdments
+                <Link href="/persons" className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+                    Persons
                 </Link>
             </nav>
 </header>

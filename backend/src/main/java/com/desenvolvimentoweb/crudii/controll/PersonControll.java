@@ -74,4 +74,11 @@ public class PersonControll {
                     .body(personService.getByIdentification(identificationType, identification));
 
     }
+
+    @GetMapping("/totalPersons")
+    public ResponseEntity<?> getTotalPersons() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(personService.getTotalPerson());
+    }
 }
