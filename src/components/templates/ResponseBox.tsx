@@ -14,15 +14,15 @@ export default function ResponseBox({goodRequest, text, display, setDisplay}: an
 
 
     
-    /*if (goodRequest){
+    if (display == "flex" && goodRequest){
 
     
         setInterval(() => {
     
             setDisplay("none")
-        }, 4000)
+        }, 3000)
 
-    }*/
+    }
 
 
 
@@ -38,7 +38,7 @@ export default function ResponseBox({goodRequest, text, display, setDisplay}: an
         >
 
             <button onClick={(e) => {
-                    e.preventDefault() //Não tirar
+                    e.preventDefault() 
                     setDisplay("none")
                 }}>
                 {
