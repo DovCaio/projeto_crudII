@@ -22,7 +22,7 @@ public class PersonResponseDTO {
     private String lastName;
     @JsonProperty("email")
     private String email;
-    @JsonProperty("adress")
+    @JsonProperty("address")
     private AddressResponseDTO address;
 
 
