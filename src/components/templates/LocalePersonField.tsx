@@ -8,7 +8,7 @@ import Person from "@/model/Person"
 
 export default function LocalePersonField({setId, setFirstName, setLastName, 
     setEmail,  setCountry, setStreetAddress, setCity,
-     setState, setPostalCode, setResponseBox} : any){
+     setState, setPostalCode, setDisplay, setGoodRequest, setText} : any){
 
     const personArray:[Person] = [
         {
@@ -38,7 +38,9 @@ export default function LocalePersonField({setId, setFirstName, setLastName,
 
         <div className={localePersonFieldStyle.localePersonField}>
 
-            <SearchField changePersons={setPersons} setResponseBox={setResponseBox}/>
+            <SearchField changePersons={setPersons} setDisplay={setDisplay} setGoodRequest={setGoodRequest}
+            setText={setText}
+            />
 
             <ListTable persons={persons} setPersons={setPersons}
                 setId={setId}
@@ -47,7 +49,9 @@ export default function LocalePersonField({setId, setFirstName, setLastName,
                 setStreetAddress={setStreetAddress}
                 setCity={setCity}  setState={setState}
                 setPostalCode={setPostalCode}
-                setResponseBox={setResponseBox}
+                setDisplay={setDisplay}
+                setGoodRequest={setGoodRequest}
+                setText={setText}
 
             />
 

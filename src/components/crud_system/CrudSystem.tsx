@@ -231,7 +231,9 @@ export default function CrudSystem() {
                  setStreetAddress={setStreetAddress}
                  setCity={setCity}  setState={setState}
                  setPostalCode={setPostalCode}
-                 setResponseBox={setDisplay}
+                 setDisplay={setDisplay}
+                 setGoodRequest={setGoodRequest}
+                 setText={setText}
 
             />
 

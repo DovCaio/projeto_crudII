@@ -9,7 +9,7 @@ import ListTableElement from "./ListTableElement"
 
 export default function ListTable({persons, setPersons, setId, setFirstName, setLastName, 
     setEmail,  setCountry, setStreetAddress, setCity,
-     setState, setPostalCode, setResponseBox}){
+     setState, setPostalCode, setDisplay, setGoodRequest, setText}){
 
     
         
@@ -74,7 +74,7 @@ export default function ListTable({persons, setPersons, setId, setFirstName, set
                         setStreetAddress={setStreetAddress}
                         setCity={setCity}  setState={setState}
                         setPostalCode={setPostalCode}
-                        setResponseBox={setResponseBox}
+                        setDisplay={setDisplay}
 
                     />) : ""
                 }

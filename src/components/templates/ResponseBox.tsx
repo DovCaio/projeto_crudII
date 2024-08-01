@@ -24,7 +24,7 @@ export default function ResponseBox({goodRequest, text, display, setDisplay}: an
 
     }*/
 
-    //const [displayToBF, setDisplatToBF] = React.useState("flex")
+
 
 
 

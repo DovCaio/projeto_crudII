@@ -56,19 +56,22 @@ export default class Request {
     }
 
 
-    public async getBy(queryType:string, identification: string, setResponseBox: Function ) {
+    public async getBy(
+        queryType:string, identification: string, setDisplay: Function, setGoodRequest: Function,
+        setText: Function
+    ) {
 
         
         return await axios.get(this.url + "/" + queryType + "/" + identification)
             .then(response => {
                 console.log(response.data[0])
-                if (!response.data[0]){
-                    this.fail(setResponseBox, {message: "Not Found"})
+                if (!response.data[0]){ //IMPLEMENTAR NO BACK, NÂO SEJA ENCONTRADO LANÇAR UM ERRO.
+                    this.fail(setDisplay, setGoodRequest, setText, {message: "Not Found"} )
                 }
                 return response
 
             })
-            .catch(err => this.fail(setResponseBox, err))
+            .catch(err => this.fail(setDisplay, setGoodRequest, setText, err))
 
     }
 

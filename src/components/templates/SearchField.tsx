@@ -7,12 +7,12 @@ import submit from "@/functions/SubmitFormGet"
 
 
 
-export default function SearchField ({changePersons, setResponseBox} :any){
+export default function SearchField ({changePersons, setDisplay, setGoodRequest, setText} :any){
 
     return (
 
         <form className={searchFildStyle.searchFild} onSubmit={e => {
-            submit(e, changePersons, setResponseBox)
+            submit(e, changePersons, setDisplay, setGoodRequest, setText)
             }}>
 
             
