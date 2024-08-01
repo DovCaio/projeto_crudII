@@ -59,11 +59,19 @@
 
 .explicationElements :hover {
 
-    background-color: #a2d5c6;
+    background-color: #8f83d8;
+    color: #fff;
     /*transform: translateY(-1rem);*/
     transform: scale(1.1, 1.1);
     transition-duration: 250ms;
     
+    
+}
+
+.explicationElement p{
+
+    color: inherit; /*Assim ele herda sempre do pai, e quando tem o event hover ele fica branco também*/
+
 }
 
 .explicationElement :hover {
