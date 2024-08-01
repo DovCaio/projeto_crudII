@@ -47,11 +47,14 @@ export default class Request {
 
     }
 
-    public async delete(id: number, setResponseBox: Function){
+    public async delete(
+        id: number, setDisplay: Function, setGoodRequest: Function, setText:Function
+
+    ){
         
         axios.delete(this.url + `/${id}`)
-            .then(response => this.sucess(setResponseBox, response))
-            .catch(err => this.fail(setResponseBox, err))
+            .then(response => this.sucess(setDisplay,setGoodRequest, setText, response))
+            .catch(err => this.fail(setDisplay, setGoodRequest, setText,  err))
 
     }
 
@@ -64,7 +67,7 @@ export default class Request {
         
         return await axios.get(this.url + "/" + queryType + "/" + identification)
             .then(response => {
-                console.log(response.data[0])
+
                 if (!response.data[0]){ //IMPLEMENTAR NO BACK, NÂO SEJA ENCONTRADO LANÇAR UM ERRO.
                     this.fail(setDisplay, setGoodRequest, setText, {message: "Not Found"} )
                 }

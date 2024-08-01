@@ -75,6 +75,8 @@ export default function ListTable({persons, setPersons, setId, setFirstName, set
                         setCity={setCity}  setState={setState}
                         setPostalCode={setPostalCode}
                         setDisplay={setDisplay}
+                        setGoodRequest={setGoodRequest}
+                        setText={setText}
 
                     />) : ""
                 }

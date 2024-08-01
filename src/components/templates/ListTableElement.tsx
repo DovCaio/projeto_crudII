@@ -24,7 +24,7 @@ function changeInputsValues(setId:any, setFirstName:any, setLastName:any, setEma
 
 export default function ListTableElement({person, persons, setPersons, setId, setFirstName, setLastName, 
     setEmail,  setCountry, setStreetAddress, setCity,
-     setState, setPostalCode, setDisplay } : any ){
+     setState, setPostalCode, setDisplay, setGoodRequest, setText } : any ){
     const id: string = person.id ? person.id.toString() :  " " 
 
 
@@ -47,7 +47,7 @@ export default function ListTableElement({person, persons, setPersons, setId, se
                     </button>
     
                     <button key={`bntr_${id}`} type="button" className="text-red-300 hover:bg-gray-300" onClick={() => {
-                        deletePerson(person.id, setDisplay)
+                        deletePerson(person.id, setDisplay, setGoodRequest, setText)
                         const index = persons.data.indexOf(person)
                         setPersons(persons.data.splice(index, 1))
     
