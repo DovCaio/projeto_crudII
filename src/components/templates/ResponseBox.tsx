@@ -5,42 +5,42 @@ import React from "react"
 
 
 
-export default function ResponseBox({goodRequest, text, setRequestBox}: any){
+export default function ResponseBox({goodRequest, text, display, setDisplay}: any){
 
     
-    const [opacity, setOpacity] = React.useState(0)
+
 
    
-    const show = setTimeout(() => {
-    
-        setOpacity(opacity + 0.1)
 
-    }, 40)
 
-    setInterval(() => clearTimeout(show), 300)
     
-    if (goodRequest){
+    /*if (goodRequest){
 
     
         setInterval(() => {
     
-            setRequestBox("")
+            setDisplay("none")
         }, 4000)
 
-    }
+    }*/
+
+    //const [displayToBF, setDisplatToBF] = React.useState("flex")
 
 
 
     return (
 
 
-        <div className={responseBoxStyle.responseBox} style={{backgroundColor: (goodRequest ?"#33ff80":"#C41E3A" ) ,
-              opacity: opacity}
+        <div className={responseBoxStyle.responseBox} style={
+            {backgroundColor: (goodRequest ?"#33ff80":"#C41E3A" ) ,display: display}
     }
 
         >
 
-            <button onClick={() => setRequestBox("")}>
+            <button onClick={(e) => {
+                    e.preventDefault() //Não tirar
+                    setDisplay("none")
+                }}>
                 {
                     <CloseIco/>
                 }

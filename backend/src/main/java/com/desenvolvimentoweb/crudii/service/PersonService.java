@@ -79,7 +79,7 @@ public class PersonService {
 
     }
 
-    public Set<Person> getByIdentification(IdentificationType queryType, String identification){
+    public Set<PersonResponseDTO> getByIdentification(IdentificationType queryType, String identification){
 
         Set<Person> result = new HashSet<>();
 
@@ -111,7 +111,9 @@ public class PersonService {
 
         }
 
-        return result;
+        return result.stream()
+                .map(this::convertToResponseDTO)
+                .collect(Collectors.toSet());
 
     }
 

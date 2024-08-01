@@ -9,36 +9,40 @@ export default class Request {
 
     private url: string = "http://localhost:8080/persons"
     
-    private sucess(setRequestBox: Function, response: AxiosResponse<any, any>){
+    private sucess(
+        setDisplay: Function, setGoodRequest: Function, setText: Function, response: AxiosResponse<any, any>
+    ){
 
-        setRequestBox(
-            <ResponseBox text={response.status} goodRequest={true} setRequestBox={setRequestBox}/>
-        )
-
-    }
-
-    private fail(setRequestBox: Function, err: any){
-
-        setRequestBox(
-            <ResponseBox text={err.message} goodRequest={false} setRequestBox={setRequestBox}/>
-        )
+        setDisplay("flex")
+        setGoodRequest(true)
+        setText(response.status)
 
     }
 
-    public async post(person: Person, setRequestBox: Function){
+    private fail(setDisplay: Function, setGoodRequest:Function, setText:Function,  err: any){
+
+        setDisplay("flex")
+        setGoodRequest(false)
+        setText(err.message)
+
+    }
+
+    public async post(
+        person: Person, setDisplay: Function, setGoodRequest:Function, setText: Function
+    ){
         
         return await axios.post(this.url, person)
-                        .then((response) => this.sucess(setRequestBox, response))
-                        .catch((err) => this.fail(setRequestBox, err))
+                        .then((response) => this.sucess(setDisplay, setGoodRequest, setText, response))
+                        .catch((err) => this.fail(setDisplay, setGoodRequest, setText, err))
                         
 
     }
 
-    public async put(person: Person, id: string, setRequestBox: Function) { 
+    public async put(person: Person, id: string,  setDisplay: Function, setGoodRequest:Function, setText: Function) { 
 
         return await axios.put(this.url + `/${id}`, person)
-            .then((response) => this.sucess(setRequestBox, response))
-            .catch((err) => this.fail(setRequestBox, err))
+            .then((response) => this.sucess(setDisplay, setGoodRequest, setText, response))
+            .catch((err) => this.fail(setDisplay, setGoodRequest, setText, err))
         
 
     }
