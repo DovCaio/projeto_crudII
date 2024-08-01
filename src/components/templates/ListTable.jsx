@@ -6,6 +6,7 @@ import ListTableElement from "./ListTableElement"
 
 
 
+
 export default function ListTable({persons, setPersons, setId, setFirstName, setLastName, 
     setEmail,  setCountry, setStreetAddress, setCity,
      setState, setPostalCode, setResponseBox}){
@@ -15,56 +16,56 @@ export default function ListTable({persons, setPersons, setId, setFirstName, set
 
     return (
 
-        <table className={listStyle.list} >
+        <table className={listStyle.list} key={"Table"}>
 
-            <thead>
+            <thead key={"thead"}>
 
                 <tr key="headOfTable">
 
-                    <th>
+                    <th key={"id"}>
                         Id
                     </th>
 
-                    <th>
+                    <th key={"firstName"}>
                         Fist Name
                     </th>
-                    <th>
+                    <th key={"lastName"}>
                         Last Name
                     </th>
-                    <th>
+                    <th key={"email"}>
                         Email
                     </th>
-                    <th>
+                    <th key={"country"}>
                         Contry
                     </th>
 
-                    <th>
+                    <th key={"streetAddress"}>
                         Street Address
                     </th>
 
-                    <th>
+                    <th key={"city"}>
                         City
                     </th>
 
-                    <th>
+                    <th key={"state"}>
                         State
                     </th>
 
-                    <th>
+                    <th key={"postaCode"}>
                         Postal Code
                     </th>
-
-                    <th>
+                    <th key={"edit"}>
                         Edit
                     </th>
+                    
                 </tr>
 
             </thead>
 
-            <tbody>
+            <tbody key={"tbody"}>
 
                 {
-
+                    
                     persons && persons.data && persons.data[0] ? persons.data.map(data => 
                     <ListTableElement person={data} setPersons={setPersons} persons={persons}
                         setId={setId}
@@ -74,6 +75,7 @@ export default function ListTable({persons, setPersons, setId, setFirstName, set
                         setCity={setCity}  setState={setState}
                         setPostalCode={setPostalCode}
                         setResponseBox={setResponseBox}
+
                     />) : ""
                 }
 

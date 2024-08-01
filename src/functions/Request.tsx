@@ -57,7 +57,7 @@ export default class Request {
         
         return await axios.get(this.url + "/" + queryType + "/" + identification)
             .then(response => {
-
+                console.log(response.data[0])
                 if (!response.data[0]){
                     this.fail(setResponseBox, {message: "Not Found"})
                 }

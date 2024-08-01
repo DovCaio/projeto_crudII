@@ -1,41 +1,25 @@
-"use client"
-import { useRouter } from "next/router"
-import { useSearchParams } from "next/navigation"
-import { usePathname } from "next/navigation"
-import ListTable from "@/components/templates/ListTable"
+"use server"
+
+
 import personsDivStyle from "@/styles/personsDivStyle.module.css"
-import { use, useEffect, useState } from "react"
+
 import Request from "@/functions/Request"
+
+import TableForAll from "@/components/persons/TableForAll"
 
 const req = new Request()
 
-export default function Acknowlegdments(){
-    const search = useSearchParams()
-    const pathname = usePathname() 
+
+
+
+export default async function Persons(){
+
+
     
-    const [count, setCount] = useState(0) 
-    const [persons, setPersons] = useState([])
-
-    useEffect(() =>{
-        const getCount = async () => {
-
-            setCount(await req.getCount())
-
-        }
-
-        const getAllPersons = async () => {
-
-            setPersons(await req.getAll())
-
-        }
-
-        getCount()
-        getAllPersons()
-
-    }, [])
-
     //console.log(search, pathname)
 
+    const data = await req.getAll()
+    
     return (
 
         <section className={personsDivStyle.section} style={{width:"100vw"}}>
@@ -46,13 +30,16 @@ export default function Acknowlegdments(){
                 </h2>
 
                 <span>
-                    {count}
+                    {await req.getCount()}
                 </span>
             </header>
 
             <main >
+                
 
-                <ListTable persons={persons}></ListTable>
+                {
+                   <TableForAll persons={data}/>
+                }
 
             </main>
 

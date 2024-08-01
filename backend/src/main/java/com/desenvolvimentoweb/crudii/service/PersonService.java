@@ -74,7 +74,7 @@ public class PersonService {
     public List<PersonResponseDTO> getAllPersons(){
 
         return personRepository.findAll().stream()
-                .map(p -> convertToResponseDTO(p))
+                .map(this::convertToResponseDTO)
                 .collect(Collectors.toList());
 
     }

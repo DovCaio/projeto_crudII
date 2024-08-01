@@ -24,49 +24,58 @@ function changeInputsValues(setId:any, setFirstName:any, setLastName:any, setEma
 
 export default function ListTableElement({person, persons, setPersons, setId, setFirstName, setLastName, 
     setEmail,  setCountry, setStreetAddress, setCity,
-     setState, setPostalCode, setResponseBox} : any ){
+     setState, setPostalCode, setResponseBox, edit } : any ){
     const id: string = person.id ? person.id.toString() :  " " 
+
+
+    function renderButtonsEdit(){
+
+
+        return <td className="flex flex-row justify-between" key={`btns_${id}`}>
+                    <button key={`bnte_${id}`} type="button" className="text-green-500 hover:bg-gray-300" onClick={() => {
+                        
+                        changeInputsValues(setId, setFirstName, setLastName, setEmail, setCountry, setStreetAddress,
+                            setCity, setState, setPostalCode, person
+                        )
+                        
+                        scrollTo(0,0)
+                        
+                        }
+                        
+                        }>
+                        <PenIco></PenIco>
+                    </button>
+    
+                    <button key={`bntr_${id}`} type="button" className="text-red-300 hover:bg-gray-300" onClick={() => {
+                        deletePerson(person.id, setResponseBox)
+                        const index = persons.data.indexOf(person)
+                        setPersons(persons.data.splice(index, 1))
+    
+                    }}>
+                        <TrashIco></TrashIco>
+                    </button>
+                </td>
+    
+        
+    }
+
 
     return (
         
         
         <tr key={id}>
 
-            <td >{id}</td>
-            <td >{person.firstName}</td>
-            <td >{person.lastName}</td>
-            <td >{person.email}</td>
-            <td >{person.address.country}</td>
-            <td >{person.address.streetAddress}</td>
-            <td >{person.address.city}</td>
-            <td >{person.address.state}</td>
-            <td >{person.address.postalCode}</td>
+            <td key={`id_${id}`}>{id}</td>
+            <td key={`fn_${id}`}>{person.firstName}</td>
+            <td key={`ln_${id}`}>{person.lastName}</td>
+            <td key={`e_${id}`}>{person.email}</td>
+            <td key={`adc_${id}`}>{person.address.country}</td>
+            <td key={`ads_${id}`}>{person.address.streetAddress}</td>
+            <td key={`adct_${id}`}>{person.address.city}</td>
+            <td key={`adst_${id}`}>{person.address.state}</td>
+            <td key={`adpc_${id}`}>{person.address.postalCode}</td>
 
-            <td className="flex flex-row justify-between">
-                <button type="button" className="text-green-500 hover:bg-gray-300" onClick={() => {
-                    
-                    changeInputsValues(setId, setFirstName, setLastName, setEmail, setCountry, setStreetAddress,
-                        setCity, setState, setPostalCode, person
-                    )
-                    
-                    scrollTo(0,0)
-                    
-                    }
-                    
-                    }>
-                    <PenIco></PenIco>
-                </button>
-
-                <button type="button" className="text-red-300 hover:bg-gray-300" onClick={() => {
-                    deletePerson(person.id, setResponseBox)
-                    const index = persons.data.indexOf(person)
-                    setPersons(persons.data.splice(index, 1))
-
-                }}>
-                    <TrashIco></TrashIco>
-                </button>
-            </td>
-
+            {renderButtonsEdit()}
         </tr>
 
     )
