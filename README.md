@@ -1,37 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CRUD Application Portfolio
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This is a simple CRUD (Create, Read, Update, Delete) application that demonstrates my full-stack development skills using **Next.js** for the front-end and **Spring Boot** for the back-end. This project serves as a portfolio piece to showcase my ability to build a functional web application with a clean and responsive user interface, as well as a robust and efficient back-end.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Home Page**: A welcoming home page that explains the functionality of the CRUD system, providing users with a clear understanding of how the application works.
+- **Person Registration**: A user-friendly form to register new people with fields for first name, last name, email, and address.
+- **View Registered People**: A dedicated page that displays the total number of registered people along with a list of all entries, showcasing my ability to retrieve and present data effectively.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technology Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Front-End:
+- **Next.js**: Used for building the user interface, providing a fast and interactive experience.
+- **React**: To manage the component-based architecture of the application.
 
-## Learn More
+### Back-End:
+- **Spring Boot**: Used to develop the back-end services, handling the business logic and database interactions.
+- **Hibernate/JPA**: For managing the database operations and mapping Java objects to database entities.
+- **REST API**: To allow the front-end to communicate seamlessly with the back-end services.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# projeto_crudII
+### Database:
+- **H2 Database**: An in-memory database used for demonstration purposes. It can be easily replaced with other relational databases like MySQL or PostgreSQL.
