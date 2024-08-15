@@ -110,7 +110,7 @@ public class PersonService {
             }
 
         }
-
+        if (result.isEmpty()) throw new PersonNotExistsException();
         return result.stream()
                 .map(this::convertToResponseDTO)
                 .collect(Collectors.toSet());

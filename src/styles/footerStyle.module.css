@@ -17,7 +17,11 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     position: relative;
-    bottom: 0px;
+    
+    width: 100%;
+    bottom: 0;
+
+    
     
 }
 

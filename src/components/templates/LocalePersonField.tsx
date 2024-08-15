@@ -10,24 +10,6 @@ export default function LocalePersonField({setId, setFirstName, setLastName,
     setEmail,  setCountry, setStreetAddress, setCity,
      setState, setPostalCode, setDisplay, setGoodRequest, setText} : any){
 
-    const personArray:[Person] = [
-        {
-            id: undefined,
-        firstName: "",
-        lastName: "",
-        email: "",
-        address: {
-
-            country: "",
-            streetAddress: "",
-            city: "",
-            state: "",
-            postalCode: ""
-
-        }
-
-    }
-    ]
     
     const [persons, setPersons] = React.useState([])        
     

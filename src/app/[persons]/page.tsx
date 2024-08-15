@@ -22,7 +22,7 @@ export default async function Persons(){
     
     return (
 
-        <section className={personsDivStyle.section} style={{width:"100vw"}}>
+        <section className={personsDivStyle.section} style={{width:"100vw", height:"54vh"}}>
 
             <header>
                 <h2>

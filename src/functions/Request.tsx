@@ -68,9 +68,6 @@ export default class Request {
         return await axios.get(this.url + "/" + queryType + "/" + identification)
             .then(response => {
 
-                if (!response.data[0]){ //IMPLEMENTAR NO BACK, NÂO SEJA ENCONTRADO LANÇAR UM ERRO.
-                    this.fail(setDisplay, setGoodRequest, setText, {message: "Not Found"} )
-                }
                 return response
 
             })
