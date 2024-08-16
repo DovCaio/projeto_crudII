@@ -14,7 +14,7 @@ export default function ResponseBox({goodRequest, text, display, setDisplay}: an
 
 
     
-    if (display == "flex" && goodRequest){
+    if (display === "flex" && goodRequest){
 
     
         setInterval(() => {

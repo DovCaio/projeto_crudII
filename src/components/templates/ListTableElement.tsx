@@ -17,6 +17,7 @@ function changeInputsValues(setId:any, setFirstName:any, setLastName:any, setEma
     setCity(person.address.city)
     setState(person.address.state)
     setPostalCode(person.address.postalCode)
+    
 
 }
 
@@ -27,7 +28,7 @@ export default function ListTableElement({person, persons, setPersons, setId, se
      setState, setPostalCode, setDisplay, setGoodRequest, setText } : any ){
     const id: string = person.id ? person.id.toString() :  " " 
 
-
+    
     function renderButtonsEdit(){
 
 

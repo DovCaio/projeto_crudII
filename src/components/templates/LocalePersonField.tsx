@@ -3,7 +3,7 @@ import SearchField from "./SearchField"
 import localePersonFieldStyle from "@/styles/localePersonFieldStyle.module.css"
 import ListTable from "@/components/templates/ListTable"
 import React from "react"
-import Person from "@/model/Person"
+
 
 
 export default function LocalePersonField({setId, setFirstName, setLastName, 

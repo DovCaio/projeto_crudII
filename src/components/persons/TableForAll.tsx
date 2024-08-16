@@ -7,7 +7,7 @@ export default function TableForAll({persons}: any){
 
     return (
 
-    <table className={listStyle.list}>
+    <table className={listStyle.list} style={{width: "100vw"}}>
 
 
 

@@ -15,10 +15,10 @@ This is a simple CRUD (Create, Read, Update, Delete) application that demonstrat
 ### Front-End:
 - **Next.js**: Used for building the user interface, providing a fast and interactive experience.
 - **React**: To manage the component-based architecture of the application.
+- **Tailwind**: To make this application beaty.
 
 ### Back-End:
 - **Spring Boot**: Used to develop the back-end services, handling the business logic and database interactions.
-- **Spring Security**: Integrated to secure the application, providing authentication and authorization mechanisms.
 - **Hibernate/JPA**: For managing the database operations and mapping Java objects to database entities.
 - **REST API**: To allow the front-end to communicate seamlessly with the back-end services.
 
