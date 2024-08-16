@@ -19,6 +19,7 @@ This is a simple CRUD (Create, Read, Update, Delete) application that demonstrat
 
 ### Back-End:
 - **Spring Boot**: Used to develop the back-end services, handling the business logic and database interactions.
+- **Spring Security**: Integrated to secure the application, providing authentication and authorization mechanisms.
 - **Hibernate/JPA**: For managing the database operations and mapping Java objects to database entities.
 - **REST API**: To allow the front-end to communicate seamlessly with the back-end services.
 
