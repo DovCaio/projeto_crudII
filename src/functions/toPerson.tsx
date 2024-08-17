@@ -19,12 +19,12 @@ export default function toPerson(form: FormData): Person{
     }
     
     let iterator = form.entries()
-    let done : boolean = false
+    
     let i  = 0
     
-    while(!done){
+    while(true){
         let actual = iterator.next()
-        done = actual.done as boolean
+        if(!actual.value) break   
         
         if (i < 3){
     
@@ -33,7 +33,7 @@ export default function toPerson(form: FormData): Person{
             
         }else{
             
-            if(!actual.value) break        
+                 
             result.address[actual.value[0] as keyof Object] = actual.value[1]
                 
         }

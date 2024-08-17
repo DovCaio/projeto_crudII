@@ -33,7 +33,7 @@ export default function ListTableElement({person, persons, setPersons, setId, se
 
 
         return <td className="flex flex-row justify-between" >
-                    <button  type="button" className="text-green-500 hover:bg-gray-300" onClick={() => {
+                    <button type="button" className="text-green-500 hover:bg-gray-300" onClick={() => {
                         
                         changeInputsValues(setId, setFirstName, setLastName, setEmail, setCountry, setStreetAddress,
                             setCity, setState, setPostalCode, person
