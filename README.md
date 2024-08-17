@@ -15,7 +15,7 @@ This is a simple CRUD (Create, Read, Update, Delete) application that demonstrat
 ### Front-End:
 - **Next.js**: Used for building the user interface, providing a fast and interactive experience.
 - **React**: To manage the component-based architecture of the application.
-- **Tailwind**: To make this application beaty.
+- **Tailwind**: To make this application beaty. 
 
 ### Back-End:
 - **Spring Boot**: Used to develop the back-end services, handling the business logic and database interactions.

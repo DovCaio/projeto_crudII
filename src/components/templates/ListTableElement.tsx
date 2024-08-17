@@ -66,15 +66,15 @@ export default function ListTableElement({person, persons, setPersons, setId, se
         
         <tr key={id}>
 
-            <td key={`id_${id}`}>{id}</td>
-            <td key={`fn_${id}`}>{person.firstName}</td>
-            <td key={`ln_${id}`}>{person.lastName}</td>
-            <td key={`e_${id}`}>{person.email}</td>
-            <td key={`adc_${id}`}>{person.address.country}</td>
-            <td key={`ads_${id}`}>{person.address.streetAddress}</td>
-            <td key={`adct_${id}`}>{person.address.city}</td>
-            <td key={`adst_${id}`}>{person.address.state}</td>
-            <td key={`adpc_${id}`}>{person.address.postalCode}</td>
+            <td>{id}</td>
+            <td>{person.firstName}</td>
+            <td>{person.lastName}</td>
+            <td>{person.email}</td>
+            <td>{person.address.country}</td>
+            <td>{person.address.streetAddress}</td>
+            <td>{person.address.city}</td>
+            <td>{person.address.state}</td>
+            <td>{person.address.postalCode}</td>
 
             {renderButtonsEdit()}
         </tr>

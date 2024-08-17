@@ -67,7 +67,7 @@ export default function ListTable({persons, setPersons, setId, setFirstName, set
                 {
                     
                     persons && persons.data && persons.data[0] ? persons.data.map(data => 
-                    <ListTableElement person={data} setPersons={setPersons} persons={persons}
+                    <ListTableElement person={data} setPersons={setPersons} persons={persons} key=""
                         setId={setId}
                         setFirstName={setFirstName}  setLastName={setLastName}
                         setEmail={setEmail}  setCountry={setCountry}

@@ -59,7 +59,7 @@ export default function TableForAll({persons}: any){
 
                 persons.map((data: any) => {
 
-                    return <ListTableElementForGetAll person={data}/>
+                    return <ListTableElementForGetAll key="" person={data}/>
 
                 })
 
