@@ -32,8 +32,8 @@ export default function ListTableElement({person, persons, setPersons, setId, se
     function renderButtonsEdit(){
 
 
-        return <td className="flex flex-row justify-between" key={`btns_${id}`}>
-                    <button key={`bnte_${id}`} type="button" className="text-green-500 hover:bg-gray-300" onClick={() => {
+        return <td className="flex flex-row justify-between" >
+                    <button  type="button" className="text-green-500 hover:bg-gray-300" onClick={() => {
                         
                         changeInputsValues(setId, setFirstName, setLastName, setEmail, setCountry, setStreetAddress,
                             setCity, setState, setPostalCode, person
@@ -47,7 +47,7 @@ export default function ListTableElement({person, persons, setPersons, setId, se
                         <PenIco></PenIco>
                     </button>
     
-                    <button key={`bntr_${id}`} type="button" className="text-red-300 hover:bg-gray-300" onClick={() => {
+                    <button type="button" className="text-red-300 hover:bg-gray-300" onClick={() => {
                         deletePerson(person.id, setDisplay, setGoodRequest, setText)
                         const index = persons.data.indexOf(person)
                         setPersons(persons.data.splice(index, 1))
