@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @Builder
 @Entity
@@ -36,5 +38,8 @@ public class Address {
     @JsonProperty("postalCode")
     @Column(nullable = false,  name = "desc_postal_code")
     private String postalCode;
+    @OneToMany(cascade = CascadeType.ALL)
+    @Column(nullable = false, name = "fk_person")
+    private Set<Person> persons;
 
 }

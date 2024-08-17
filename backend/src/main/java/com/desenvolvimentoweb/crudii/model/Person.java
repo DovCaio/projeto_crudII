@@ -33,7 +33,7 @@ public class Person {
     @JsonProperty("address")
     @JoinColumn(name = "address_tb")
     @PrimaryKeyJoinColumn( name = "fk_first_name")
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     private Address address;
 
 }

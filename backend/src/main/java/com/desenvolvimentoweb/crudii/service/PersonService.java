@@ -1,9 +1,11 @@
 package com.desenvolvimentoweb.crudii.service;
 
+import com.desenvolvimentoweb.crudii.dto.address.AddressPostPutRequestDTO;
 import com.desenvolvimentoweb.crudii.dto.person.PersonPostPutRequestDTO;
 import com.desenvolvimentoweb.crudii.dto.person.PersonResponseDTO;
 import com.desenvolvimentoweb.crudii.enums.IdentificationType;
 import com.desenvolvimentoweb.crudii.exception.person.PersonNotExistsException;
+import com.desenvolvimentoweb.crudii.model.Address;
 import com.desenvolvimentoweb.crudii.model.Person;
 import com.desenvolvimentoweb.crudii.repository.PersonRepository;
 import org.modelmapper.ModelMapper;
@@ -24,25 +26,25 @@ public class PersonService {
     private PersonRepository personRepository;
 
     @Bean
-    private ModelMapper personMapper(){
+    private ModelMapper modelMapper(){
 
         return new ModelMapper();
 
     }
 
-    private Person convertByRequestDTO(PersonPostPutRequestDTO personPostPutRequestDTO){
+    private Person convertByRequestDTOPerson(PersonPostPutRequestDTO personPostPutRequestDTO){
 
-        return personMapper().map(personPostPutRequestDTO, Person.class);
+        return modelMapper().map(personPostPutRequestDTO, Person.class);
     }
 
     private PersonResponseDTO convertToResponseDTO(Person person){
 
-        return personMapper().map(person, PersonResponseDTO.class);
+        return modelMapper().map(person, PersonResponseDTO.class);
 
     }
 
     public PersonResponseDTO createPerson(PersonPostPutRequestDTO personPostPutRequestDTO){
-        Person person = convertByRequestDTO(personPostPutRequestDTO);
+        Person person = convertByRequestDTOPerson(personPostPutRequestDTO);
 
         return convertToResponseDTO(personRepository.save(person));
 
@@ -52,7 +54,7 @@ public class PersonService {
     public PersonResponseDTO updatePerson(Long id,PersonPostPutRequestDTO personPostPutRequestDTO){
         if (!personRepository.existsById(id)) throw new PersonNotExistsException();
 
-        Person person = convertByRequestDTO(personPostPutRequestDTO);
+        Person person = convertByRequestDTOPerson(personPostPutRequestDTO);
         person.setId(id);
 
         return convertToResponseDTO(personRepository.save(person));
