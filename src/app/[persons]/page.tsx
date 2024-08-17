@@ -15,10 +15,9 @@ const req = new Request()
 export default async function Persons(){
 
 
-    
-    //console.log(search, pathname)
+    const datas = await req.getAll()
+    const qttPersons = await req.getCount()
 
-    const data = await req.getAll()
     
     return (
 
@@ -30,7 +29,7 @@ export default async function Persons(){
                 </h2>
 
                 <span>
-                    {await req.getCount()}
+                    {qttPersons}
                 </span>
             </header>
 
@@ -38,7 +37,7 @@ export default async function Persons(){
                 
 
                 {
-                   <TableForAll persons={data}/>
+                   <TableForAll persons={datas}/>
                 }
 
             </main>
