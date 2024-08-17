@@ -4,30 +4,27 @@ import Person from "@/model/Person"
 export default function toPerson(form: FormData): Person{
 
 
-    let result : Person = {
+    let result : Person  = {
         id: undefined,
         firstName: "",
         lastName: "",
         email: "",
         address: {
-
             country: "",
-            streetAddress: "",
             city: "",
+            streetAddress: "",
             state: "",
             postalCode: ""
-
         }
-
     }
     
     let iterator = form.entries()
     let done : boolean = false
     let i  = 0
-    while(true){
+    
+    while(!done){
         let actual = iterator.next()
         done = actual.done as boolean
-        if (done) break;
         
         if (i < 3){
     
@@ -35,14 +32,17 @@ export default function toPerson(form: FormData): Person{
             i++;
             
         }else{
-                
+            
+            if(!actual.value) break        
             result.address[actual.value[0] as keyof Object] = actual.value[1]
                 
         }
                 
         
     }
+
+    console.log(result)
     
-    return result
+    return result as Person
 
 }

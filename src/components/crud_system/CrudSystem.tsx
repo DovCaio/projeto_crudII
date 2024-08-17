@@ -196,13 +196,13 @@ export default function CrudSystem() {
                     </div>
 
                     <div className="sm:col-span-2">
-                    <label htmlFor="postaCode" className="block text-sm font-medium leading-6 text-gray-900">
+                    <label htmlFor="postalCode" className="block text-sm font-medium leading-6 text-gray-900">
                         ZIP / Postal code
                     </label>
                     <div className="mt-2">
                         <input
-                        id="postaCode"
-                        name="postaCode"
+                        id="postalCode"
+                        name="postalCode"
                         type="text"
                         autoComplete="postal-code"
                         value={postalCode}
